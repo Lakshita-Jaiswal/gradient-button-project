@@ -1,1 +1,107 @@
 
+/* ------------------------------
+   Body Styling
+   Center content and add background gradient
+------------------------------ */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  font-family: "Poppins", sans-serif;
+}
+
+/* ------------------------------
+   Container Styling
+   Center text inside container
+------------------------------ */
+.container {
+  text-align: center;
+}
+
+/* ------------------------------
+   Gradient Button Styling
+   Base styles for button appearance
+------------------------------ */
+.gradient-btn {
+  position: relative;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80, #22d3ee);
+  background-size: 600% 600%;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ------------------------------
+   Gradient Button Hover Effect
+   Animate gradient and scale button
+------------------------------ */
+.gradient-btn:hover {
+  animation: gradientShift 3s ease infinite;
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* ------------------------------
+   Keyframes for Gradient Animation
+   Smoothly shift gradient background
+------------------------------ */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ------------------------------
+   Gradient Button Hover Shine Effect
+   Adds a radial shine overlay on hover
+------------------------------ */
+.gradient-btn::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+/* ------------------------------
+   Gradient Button Hover Shine Visibility
+   Show shine effect on hover
+------------------------------ */
+.gradient-btn:hover::after {
+  opacity: 1;
+  animation: rotate(45deg);
+}
+
+/* ------------------------------
+   Heading Styling (h1)
+   Color, spacing, font size and text shadow
+------------------------------ */
+h1 {
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 28px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
